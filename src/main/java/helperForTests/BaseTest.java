@@ -10,12 +10,12 @@ public class BaseTest {
     protected WebDriver driver = new CreateDriverChrome().createDriver();
     protected EpamMainPage epamMainPage = new EpamMainPage(driver);
 
-    @BeforeTest (groups = {"smoke","regress"})
+    @BeforeMethod ()
     public void setUp(){
         driver.get("https://www.epam.com");
     }
 
-    @AfterTest (groups = {"smoke","regress"})
+    @AfterMethod ()
     public void quit(){
         driver.quit();
     }

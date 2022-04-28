@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
+<suite name="All Test Suite" parallel="methods" thread-count="5">
     <test name="Test1">
-
-
         <parameter name="query" value="Epam"></parameter>
-        <parameter name="IntQuery" value="1"></parameter>
-        <parameter name="precondNameXML" value="Canada"></parameter>
-        <groups>
+<!--        <parameter name="IntQuery" value="1"></parameter>-->
+<!--        <parameter name="precondNameXML" value="Canada"></parameter>-->
+<!--        <groups>-->
 <!--            <run>-->
-<!--                <include name="smoke" ></include>-->
+<!--                <include name="IgorGroupRun"/>-->
 <!--            </run>-->
-        </groups>
-
+<!--        </groups>-->
 
         <classes>
             <class name="functionTests.MainTest"/>
         </classes>
     </test>
+
+    <listeners>
+        <listener class-name="functionTests.TestNGlistener"></listener>
+    </listeners>
 </suite>
